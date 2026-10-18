@@ -512,7 +512,6 @@ agribusiness-data-analysis/
 └── reports/
 ```
 
-This is the intended organization. Ensure that filenames match the actual files committed to GitHub. Empty directories may not appear unless they contain tracked files.
 
 ---
 
