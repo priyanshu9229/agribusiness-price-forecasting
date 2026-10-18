@@ -1,486 +1,486 @@
-# Agribusiness Data Analysis 🌾📊
+# 🌾 Agribusiness Data Analysis
 
-A five-week **Junior Data Scientist Internship project at YuvaIntern** focused on agribusiness data planning, preprocessing strategies, exploratory data analysis (EDA) design, predictive modeling, and model evaluation.
+<p align="center">
+  <strong>A Five-Week Junior Data Scientist Internship Project at YuvaIntern</strong>
+  <br/>
+  Agricultural Data · Exploratory Analysis · Predictive Modeling · Model Evaluation
+</p>
 
-The project follows the five-week internship workflow and uses publicly available Indian agricultural data as its planned analytical context. Work is documented progressively, with a clear distinction between completed planning, illustrative examples, proposed analyses, and actual results.
+<p align="center">
+  <img src="https://img.shields.io/badge/Internship-YuvaIntern-2E7D32?style=flat-square" alt="YuvaIntern Internship"/>
+  <img src="https://img.shields.io/badge/Domain-Data%20Science-1565C0?style=flat-square" alt="Data Science"/>
+  <img src="https://img.shields.io/badge/Project-In%20Progress-EA8F00?style=flat-square" alt="Project In Progress"/>
+  <img src="https://img.shields.io/badge/Data-Public%20Sources-607D8B?style=flat-square" alt="Public Data Sources"/>
+</p>
+
+This repository documents a five-week internship project focused on planning agricultural data analysis, designing data-cleaning workflows, developing an exploratory data analysis (EDA) framework, proposing predictive models, and establishing an evaluation strategy.
+
+The project uses **publicly available Indian agricultural data as its planned analytical context**. Reports distinguish completed deliverables, proposed methods, illustrative examples, and actual results.
 
 ---
 
-## 👤 Intern Information
+## 📑 Table of Contents
 
-| Field | Details |
+- [👤 About the Project](#-about-the-project)
+- [🎯 Objectives](#-objectives)
+- [🌱 Project Scope](#-project-scope)
+- [🗓️ Internship Roadmap](#️-internship-roadmap)
+- [📌 Week 1 — Project Planning](#-week-1--agribusiness-data-analysis-planning)
+- [🧹 Week 2 — Data Preprocessing](#-week-2--data-cleaning-and-preprocessing-strategy)
+- [🔎 Week 3 — EDA Design](#-week-3--exploratory-data-analysis-eda-report-design)
+- [🤖 Week 4 — Predictive Modeling](#-week-4--predictive-modeling-framework)
+- [📊 Week 5 — Model Evaluation](#-week-5--model-evaluation-and-reporting-strategy)
+- [📚 Data Sources](#-potential-data-sources)
+- [🛠️ Tools and Technologies](#️-tools-and-technologies)
+- [🔁 Reproducibility and Data Integrity](#-reproducibility-and-data-integrity)
+- [📁 Repository Structure](#-repository-structure)
+- [⚠️ Limitations](#️-limitations)
+- [📈 Current Progress](#-current-progress)
+- [👨‍💻 Author](#-author)
+
+---
+
+## 👤 About the Project
+
+| Detail | Information |
 |---|---|
-| **Name** | Priyanshu Kumar Singh |
+| **Intern** | Priyanshu Kumar Singh |
 | **Role** | Junior Data Scientist Intern |
 | **Organization** | YuvaIntern |
 | **Domain** | Agribusiness Data Analysis |
-| **Internship Period** | September 2026 – October 2026 |
+| **Duration** | September 2026 – October 2026 |
+| **Project format** | Five-week internship workflow |
+
+## 🎯 Objectives
+
+The project explores how agricultural data can support a structured data-science workflow.
+
+- 🌾 **Plan:** Define research questions, analytical scope, and potential data sources.
+- 🧹 **Prepare:** Identify data-quality problems and design preprocessing strategies.
+- 🔎 **Explore:** Design analyses for trends, seasonality, anomalies, and variable relationships.
+- 🤖 **Model:** Develop a framework for agricultural yield forecasting.
+- 📊 **Evaluate:** Establish metrics, validation strategies, and reporting practices.
+- 📝 **Document:** Communicate methods, assumptions, limitations, and results transparently.
+
+## 🌱 Project Scope
+
+### Initial crop selection
+
+The Week 1 plan established an initial direction of agricultural commodity price analysis and forecasting using five crops.
+
+| Crop category | Selected crops |
+|---|---|
+| 🥬 Perishable crops | Tomato, Onion, Potato |
+| 🌾 Staple crops | Wheat, Rice |
+
+Potential indicators include:
+
+- **Market:** Minimum, modal, and maximum prices; market arrivals.
+- **Production:** Sown or harvested area, production, and yield.
+- **Weather:** Rainfall, rainfall deviation, and temperature.
+- **Resources:** Irrigation and other agricultural inputs where suitable data are available.
+- **Geography:** State, district, and mandi/APMC.
+
+### How the weekly tasks connect
+
+- **Weeks 1–3:** Plan the project, develop a data-cleaning strategy, and design EDA using agricultural prices, arrivals, production, and weather as the working context.
+- **Week 4:** Follow the official crop-yield forecasting task, using wheat yield at district level in Uttar Pradesh as the first proposed case.
+- **Week 5:** Develop a model evaluation and reporting strategy based on the Week 4 framework.
+
+The workflow may be adapted to other agribusiness targets, but each target requires its own features, validation design, and evaluation criteria.
+
+> **📌 Important:** The reports document planning and methodology. They do not imply that a real dataset has already been analyzed or that a predictive model has been trained. Illustrative examples are not actual agricultural findings.
 
 ---
 
-## 🎯 Project Overview
+## 🗓️ Internship Roadmap
 
-Agribusiness data can provide insights into crop production, market prices, market arrivals, seasonal patterns, weather conditions, and agricultural resource utilization.
-
-The objective of this internship project is to develop a structured understanding of how agricultural data can be:
-
-1. Planned and collected from suitable public sources.
-2. Inspected, cleaned, and prepared for analysis.
-3. Explored to identify trends, patterns, anomalies, and relationships.
-4. Considered within an appropriate predictive modeling framework.
-5. Evaluated and communicated to technical and non-technical stakeholders.
-
-The project is organized according to the **five-week YuvaIntern internship workflow**. Each stage builds on the preceding work while remaining aligned with the specific requirements of the internship task.
-
----
-
-## 🌾 Initial Project Scope
-
-During Week 1, the project established an initial direction: **agricultural commodity price analysis and forecasting using publicly available Indian agricultural data**.
-
-The initial scope considers five crops.
-
-### Perishable crops
-- Tomato
-- Onion
-- Potato
-
-### Staple crops
-- Wheat
-- Rice
-
-Potential analytical indicators include:
-
-- Market prices and market arrivals
-- Cultivated and harvested area
-- Crop production and yield
-- Rainfall and weather conditions
-- Irrigation and other resource-utilization indicators, where suitable public data are available
-
-This scope provides the initial project context. Individual weekly assignments follow the specific requirements of the YuvaIntern portal and may consider broader agribusiness examples when appropriate.
-
-**Scope clarification:** The initial commodity-price analysis direction does not mean that a real price dataset has already been analyzed. Week 3 is an EDA report design deliverable, while actual analysis and modeling will depend on subsequent work and data availability.
-
----
-
-## 📅 Internship Workflow
-
-| Week | Internship Task | Status |
+| Week | Deliverable | Status |
 |---|---|---|
-| **Week 1** | Agribusiness Data Analysis Planning | ✅ Completed |
-| **Week 2** | Data Cleaning and Preprocessing Strategy | ✅ Completed |
-| **Week 3** | Exploratory Data Analysis (EDA) Report Design | ✅ Report Prepared |
-| **Week 4** | Predictive Modeling Framework | ⏳ Upcoming |
-| **Week 5** | Model Evaluation and Reporting Strategy | ⏳ Upcoming |
+| 1 | Agribusiness Data Analysis Planning | ✅ Completed |
+| 2 | Data Cleaning and Preprocessing Strategy | ✅ Completed |
+| 3 | Exploratory Data Analysis Report Design | ✅ Completed |
+| 4 | Predictive Modeling Framework | ✅ Completed |
+| 5 | Model Evaluation and Reporting Strategy | ⏳ Upcoming |
 
 ---
 
 ## 📌 Week 1 — Agribusiness Data Analysis Planning
 
-### Objective
+**Objective:** Establish a structured plan for collecting and analyzing publicly available agricultural data.
 
-Develop a structured plan for collecting and analyzing publicly available agribusiness data.
+### Key work
 
-### Work completed
-
-The Week 1 planning report established:
-
-- Project rationale and initial scope
-- Five selected crops
-- Research questions and key indicators
-- Potential public data sources
-- Proposed data collection and cleaning approaches
-- Analytical methods and initial forecasting direction
-- Project risks and limitations
-- Project timeline
+- Defined the project rationale and initial scope.
+- Selected five crops for the initial project context.
+- Identified research questions and potential indicators.
+- Listed potential public data sources.
+- Proposed data collection, cleaning, and analysis approaches.
+- Identified risks, limitations, and a project timeline.
 
 ### Initial research questions
 
 1. How do agricultural commodity prices vary across seasons?
 2. Which selected crops experience greater price variability?
-3. Are increases in market arrivals associated with subsequent price movements?
+3. Are changes in market arrivals associated with price movements?
 4. How might rainfall and production indicators relate to agricultural market behaviour?
 5. Which available variables may provide useful signals for forecasting?
 
-### Proposed data sources
-
-- **AGMARKNET** — agricultural market prices and arrivals.
-- **e-NAM** — agricultural market information for cross-checking where appropriate.
-- **Department of Agriculture / ES&E Division** — area, production, and yield statistics.
-- **India Meteorological Department (IMD)** — rainfall and weather information.
-- **data.gov.in** — relevant government open-data datasets.
-
-The availability, geographic coverage, definitions, units, and quality of these sources must be checked before using their data for actual analysis.
+**Deliverable:** Week 1 planning report.
 
 ---
 
 ## 🧹 Week 2 — Data Cleaning and Preprocessing Strategy
 
-### Objective
+**Objective:** Design a preprocessing workflow for a hypothetical agribusiness dataset.
 
-Develop a data cleaning and preprocessing strategy for a **hypothetical agribusiness dataset**.
+### Proposed dataset fields
 
-The report considers how common agricultural-data quality problems could be detected, investigated, and handled before analytical use.
+`Date`, `Crop`, `State`, `District`, `Mandi/APMC`, minimum price, modal price, maximum price, market arrivals, rainfall, and crop yield.
 
-### Hypothetical dataset variables
+### Data-quality issues considered
 
-- Date
-- Crop
-- State
-- District
-- Mandi/APMC
-- Minimum price
-- Modal price
-- Maximum price
-- Market arrivals
-- Rainfall
-- Crop yield
-
-### Data quality issues considered
-
-- Missing values
+- Missing values and duplicate records
 - Inconsistent date formats
-- Inconsistent crop names
-- Inconsistent geographic labels
-- Incorrect data types
-- Duplicate records
-- Inconsistent units
+- Inconsistent crop and geographic labels
+- Incorrect data types and units
 - Potential outliers
 - Invalid or logically inconsistent values
 
-### Proposed cleaning workflow
+### Proposed workflow
 
 ```text
 Raw Dataset
-     ↓
-Data Inspection
-     ↓
+    ↓
+Initial Inspection
+    ↓
 Schema and Data-Type Validation
-     ↓
-Missing-Value Assessment
-     ↓
-Duplicate Detection
-     ↓
-Format and Category Standardization
-     ↓
-Unit Standardization
-     ↓
-Outlier and Invalid-Value Investigation
-     ↓
+    ↓
+Missing Values and Duplicate Checks
+    ↓
+Date, Category and Geography Standardization
+    ↓
+Unit Validation
+    ↓
+Outlier Investigation
+    ↓
 Treatment or Filtering
-     ↓
-Validation
-     ↓
-Processed Dataset
-     ↓
-Documentation and Reproducibility
+    ↓
+Post-Cleaning Validation
+    ↓
+Processed Data and Documentation
 ```
 
-The strategy follows the principle:
+**Core principle:** Detect → Investigate → Decide → Treat → Validate → Document.
 
-**Detect → Investigate → Decide → Treat → Validate → Document**
+Unusual values should be investigated rather than automatically deleted. Their validity, source records, units, and context should guide the final decision.
 
-The report uses hypothetical examples to explain possible cleaning decisions. Unusual observations are not automatically treated as errors; their validity and context must be investigated first.
+**Deliverable:** Week 2 cleaning and preprocessing strategy report.
 
-No claim is made that a real agribusiness dataset has already been cleaned.
+*Scope note: The report describes a strategy for a hypothetical dataset. It does not claim that real agricultural data has been cleaned.*
 
 ---
 
 ## 🔎 Week 3 — Exploratory Data Analysis (EDA) Report Design
 
-### Status: Report Prepared
+**Objective:** Design an EDA report for investigating agricultural trends, regional differences, seasonality, anomalies, and relationships between variables.
 
-### Objective
+### Planned analyses
 
-Design a complete EDA report framework for examining agribusiness trends, following the Week 3 internship requirements.
-
-The report explains how data could be examined to understand regional production, seasonal patterns, market prices, anomalies, and relationships between relevant agricultural variables.
-
-**Important:** This is an EDA report design deliverable. The worked calculations and datasets used in its examples are illustrative; they are not presented as findings from an actual agricultural dataset.
-
-### 3.1 Research questions
-
-The proposed analysis considers questions such as:
-
-1. How do market prices change across seasons?
-2. How do prices and production indicators vary by region?
-3. Are there unusual price observations that require investigation?
-4. Is there an association between market arrivals and modal prices?
-5. How might seasonal and weather-related variables relate to agricultural indicators?
-
-The specific questions addressed in actual analysis will depend on the selected dataset, its available variables, and its quality.
-
-### 3.2 Data overview and preparation
-
-The report proposes checking:
-
-- Dataset structure, variable definitions, and data types
-- Missing values and duplicate records
-- Date formats and time coverage
-- Crop, state, district, and mandi labels
-- Price and arrival units
-- Invalid or inconsistent observations
-- Geographic and temporal coverage
-
-These checks are intended to establish whether the selected data are suitable for the planned analysis.
-
-### 3.3 Planned visualizations
-
-| Visualization | Intended purpose |
+| Method | Purpose |
 |---|---|
-| Bar chart | Compare production or other indicators across regions |
-| Histogram | Examine the distribution of prices or other numerical variables |
-| Line chart | Examine changes in prices or production over time |
-| Scatter plot | Explore relationships between two numerical variables |
-| Box plot | Compare distributions and investigate potential outliers |
-| Correlation visualization | Summarize selected numerical associations |
+| Descriptive statistics | Summarize numerical variables |
+| Bar charts | Compare indicators across regions |
+| Histograms | Examine variable distributions |
+| Line charts | Investigate changes over time |
+| Scatter plots | Explore relationships between variables |
+| Box plots and IQR | Flag potential outliers for investigation |
+| Correlation analysis | Summarize selected numerical associations |
+| Hypothesis testing | Assess evidence against specified null hypotheses |
 
-Visualizations will be selected according to the analytical question and the characteristics of the actual data.
+### Illustrative examples
 
-### 3.4 Worked illustrative examples
+The report uses hypothetical examples to demonstrate analytical calculations:
 
-The report includes worked examples to demonstrate how proposed analytical methods could be applied.
+- **Price change:** An increase from ₹2,000 to ₹2,400 represents a 20% increase.
+- **Outlier analysis:** An illustrative tomato-price series demonstrates IQR-based flagging and the potential influence of extreme values on descriptive statistics.
+- **Arrivals and prices:** A hypothetical eight-day dataset demonstrates Pearson and Spearman correlation calculations.
+- **Seasonal index:** An illustrative monthly-price example demonstrates the calculation and interpretation of a seasonal index.
 
-**Price-change calculation**
+These examples demonstrate methods; they are not findings from actual agricultural data.
 
-An illustrative price increase from ₹2,000 to ₹2,400 represents a 20% increase.
+### Proposed hypothesis-testing framework
 
-**Outlier investigation using IQR**
-
-A hypothetical tomato-price series demonstrates how the interquartile range (IQR) can be used to flag an unusual observation for investigation. The example compares descriptive statistics with and without the flagged observation to illustrate the potential influence of extreme values.
-
-**Market arrivals and prices**
-
-A hypothetical eight-day dataset demonstrates Pearson and Spearman correlation calculations. The example illustrates a negative association in the constructed data; it does not establish a real-world relationship between arrivals and prices.
-
-**Seasonal index**
-
-An illustrative monthly-price example demonstrates how seasonal indices can be calculated and interpreted, with a limitation noted regarding the short, hypothetical observation period.
-
-These examples are included to explain methodology and calculations, not to report actual market findings.
-
-### 3.5 Hypothesis-testing framework
-
-To address the need for a more formal statistical framework, the Week 3 report proposes explicit hypotheses, statistical tests, assumptions, significance criteria, and limitations.
-
-The proposed framework includes:
-
-| Hypothesis | Research question | Proposed method |
+| ID | Research question | Proposed method |
 |---|---|---|
-| **H-1** | Do tomato prices differ between the monsoon and winter periods? | Welch's independent-samples t-test; Mann–Whitney U test as a possible non-parametric alternative |
-| **H-2** | Do prices differ across three selected mandis? | ANOVA or Welch ANOVA; Kruskal–Wallis as a possible non-parametric alternative |
-| **H-3** | Are market arrivals associated with modal prices? | Spearman rank correlation, with lagged relationships considered |
-| **H-4** | Is rainfall associated with crop yield across districts? | Spearman rank correlation on suitable district-year observations |
+| H-1 | Do tomato prices differ between monsoon and winter periods? | Welch's independent-samples t-test; Mann–Whitney U as a possible alternative |
+| H-2 | Do prices differ across three selected mandis? | ANOVA or Welch ANOVA; Kruskal–Wallis as a possible alternative |
+| H-3 | Are market arrivals associated with modal prices? | Spearman rank correlation; lagged relationships considered separately |
+| H-4 | Is rainfall associated with crop yield across districts? | Spearman rank correlation on suitable district-year observations |
 
-The choice of test would depend on the final dataset, study design, sample size, independence of observations, distributional characteristics, and other relevant assumptions.
+### Statistical considerations
 
-### 3.6 Significance, uncertainty, and practical relevance
+- Initial significance level: **α = 0.05**.
+- Bonferroni-adjusted threshold: **α = 0.0125** for four pre-specified primary tests.
+- Report confidence intervals, p-values, effect sizes, and practical significance where appropriate.
+- Check test assumptions, sample size, data quality, and dependence between observations.
+- Treat exploratory lag comparisons separately because they introduce additional multiple-testing risk.
+- Distinguish statistical significance from practical importance.
 
-The proposed statistical procedure includes:
+The final test choice must be justified by the study design and assumptions. Illustrative test results are not actual agricultural-market results.
 
-- A significance level of **α = 0.05** as the initial framework.
-- A Bonferroni-adjusted threshold of **α = 0.0125** when correcting for four pre-specified primary tests.
-- Confidence intervals to communicate uncertainty around estimated effects.
-- P-values to assess evidence against the specified null hypotheses.
-- Practical-significance criteria so that statistical significance is not treated as equivalent to business importance.
-- Assumption checks and alternative tests where appropriate.
-- Limitations related to sample size, data quality, observational relationships, and multiple comparisons.
-
-For H-1, the report includes an illustrative Welch t-test using hypothetical weekly price averages. It demonstrates how a mean difference, standard error, test statistic, degrees of freedom, p-value, confidence interval, and effect size could be reported.
-
-The illustrative results are not actual agricultural-market results.
-
-The report also recognizes that conventional 95% confidence intervals and multiplicity-adjusted testing thresholds must be clearly distinguished. Additional lag comparisons in H-3 require separate treatment of multiple-testing risk; exploratory lag results should not automatically be interpreted as confirmatory evidence.
-
-### 3.7 Planned EDA report structure
+### Proposed report structure
 
 ```text
 Executive Summary
-        ↓
+    ↓
 Objectives and Research Questions
-        ↓
-Data Sources and Variable Definitions
-        ↓
-Data Preparation and Quality Checks
-        ↓
-EDA Methodology
-        ↓
+    ↓
+Data Sources and Quality Checks
+    ↓
 Descriptive and Visual Analysis
-        ↓
+    ↓
 Trends, Seasonality and Anomalies
-        ↓
+    ↓
 Feature Relationships and Correlations
-        ↓
+    ↓
 Hypothesis Testing and Uncertainty
-        ↓
+    ↓
 Findings and Recommendations
-        ↓
+    ↓
 Limitations and Reproducibility
 ```
 
-The final findings and recommendations sections will be populated with actual evidence only after the relevant analysis has been performed.
+**Deliverable:** Week 3 EDA report design.
 
-### 3.8 Work plan and reproducibility
-
-The report proposes a 10-working-day plan, with approximately 3–4 hours of work per day, covering:
-
-- Defining research questions and variables
-- Identifying suitable data sources
-- Designing data-quality checks
-- Specifying visualizations and descriptive analyses
-- Developing the hypothesis-testing framework
-- Working through illustrative calculations
-- Structuring the report
-- Reviewing limitations and reproducibility
-- Completing the report and performing a final quality check
-
-This is a proposed work plan for the report-design task, not a claim that all planned real-data analysis has been completed.
+*Scope note: The report is an EDA design deliverable. Actual findings require suitable data and completed analysis.*
 
 ---
 
 ## 🤖 Week 4 — Predictive Modeling Framework
 
-### Objective
+**Objective:** Develop a predictive modeling framework for agricultural yield forecasting and resource planning.
 
-Develop a predictive modeling framework for **agricultural yield forecasting**, as specified by the internship workflow.
+### 1. Define the prediction problem
 
-The framework will consider:
+| Component | Proposed definition |
+|---|---|
+| Target | Crop yield in tonnes per hectare (t/ha) |
+| First case | Wheat, rabi season, Uttar Pradesh |
+| Observation unit | Crop–district–year |
+| Forecast date | 1 January, before the March–April harvest |
+| Potential target source | Directorate of Economics and Statistics district-wise Area, Production and Yield (APY) data |
+| Intended application | Planning, procurement, storage, and resource allocation |
 
-- The prediction objective and target variable
-- Potential features related to agricultural yield
-- Feature selection and feature engineering
-- Data suitability and preparation
-- Training and testing strategy
-- Candidate machine-learning algorithms
-- Validation strategy
-- Model-performance and reliability assessment
+Yield is defined as production divided by harvested area when the source data use compatible units and definitions.
 
-Potential predictors may include historical yield, cultivated or harvested area, rainfall, and other suitable variables, depending on data availability and compatibility.
+### 2. Select candidate features
 
-Model selection will depend on the characteristics of the actual dataset rather than assuming that one algorithm is automatically best.
+| Data domain | Proposed features | Rationale |
+|---|---|---|
+| Historical statistics | Previous-year yield, trailing three-year mean, area | Represents historical productivity |
+| Weather | October–December rainfall, rainy days, temperature summaries | Represents selected growing-season conditions |
+| Irrigation | Irrigated-area share | Represents exposure to rainfall variability |
+| Soil and land | Reliable soil and land-use indicators, where available | Adds regional context |
+| Agricultural inputs | Fertilizer and seed indicators, where available | Represents input and management conditions |
+| Geography and calendar | District and crop-season indicators | Represents regional and seasonal differences |
 
-**Status:** Upcoming. No completed model training or forecasting performance is claimed.
+The initial feature set uses historical yields, October–December rainfall and temperature, and irrigated-area share.
+
+### 3. Prevent data leakage
+
+- Use only features available by the intended forecast date.
+- Fit imputation, scaling, and other learned preprocessing steps using training data only.
+- Validate units, definitions, time alignment, and geographic consistency.
+- Investigate unusual observations instead of automatically removing them.
+- Record assumptions, exclusions, and data availability dates.
+
+For example, using rainfall observed after 1 January would violate the proposed forecasting setup.
+
+### 4. Proposed modeling workflow
+
+```text
+Define Forecasting Problem
+    ↓
+Assemble and Validate Data
+    ↓
+Engineer Forecast-Time Features
+    ↓
+Create Temporal Validation Splits
+    ↓
+Establish Baseline
+    ↓
+Train Candidate Models
+    ↓
+Compare Validation Performance
+    ↓
+Analyze Errors and Reliability
+    ↓
+Evaluate on Sealed Test Years
+    ↓
+Document Results and Limitations
+```
+
+### 5. Proposed temporal validation
+
+For a dataset covering 2010–2022, the proposed expanding-window design is:
+
+| Step | Training years | Validation/test years |
+|---|---|---|
+| Fold 1 | 2010–2014 | 2015 |
+| Fold 2 | 2010–2015 | 2016 |
+| Fold 3 | 2010–2016 | 2017 |
+| Fold 4 | 2010–2017 | 2018 |
+| Fold 5 | 2010–2018 | 2019 |
+| Final evaluation | 2010–2019 | 2020–2022 |
+
+This split is subject to data availability and publication timing. Validation results guide model selection; the final test period remains untouched until the modeling decisions are complete.
+
+### 6. Candidate models
+
+| Model | Purpose |
+|---|---|
+| Last-year-yield baseline | Simple reference for comparison |
+| Linear/Ridge Regression | Interpretable baseline; Ridge can reduce instability from correlated predictors |
+| Random Forest | Captures nonlinear relationships and interactions |
+| Gradient-boosted trees | Candidate for structured data, with tuning and overfitting checks |
+
+Model choice should depend on validation performance, stability, interpretability, data suitability, and operational constraints.
+
+### 7. Evaluation metrics
+
+| Metric | Interpretation |
+|---|---|
+| **MAE** | Average absolute prediction error, in t/ha |
+| **RMSE** | Penalizes larger prediction errors more strongly |
+| **R²** | Compares predictions with a mean-based reference; may be negative on evaluation data |
+| **Mean error (bias)** | Indicates systematic over- or under-prediction |
+
+Reliability checks include residual analysis, errors by district and year, performance across yield ranges, stability across validation windows, and uncertainty reporting where a defensible method is available.
+
+### 8. Illustrative examples
+
+**The following figures are hypothetical, not real model results.**
+
+For a district with yields of 3.0, 3.1, and 2.9 t/ha from 2016–2018, the trailing mean is:
+
+\[
+\frac{3.0+3.1+2.9}{3}=3.0\text{ t/ha}
+\]
+
+For a 2019 prediction, the trailing mean and previous-year yield must use only information available before the prediction date.
+
+An illustrative comparison on eight observations is shown below:
+
+| Metric | Baseline | Candidate model |
+|---|---:|---:|
+| MAE (t/ha) | 0.225 | 0.125 |
+| RMSE (t/ha) | 0.240 | 0.132 |
+| R² | 0.57 | 0.87 |
+| Mean error | 0.000 | 0.000 |
+
+These invented values demonstrate how a model comparison can be presented. Eight observations are insufficient to establish reliable generalization, and the figures must not be reported as actual performance.
+
+### 9. Statistical considerations
+
+The report proposes two questions for future analysis:
+
+- **M-1:** Does the candidate model improve on the baseline? Compare paired errors from appropriate validation predictions, using a statistical method justified by the data structure and assumptions.
+- **M-2:** Is irrigated-area share associated with yield across districts? Consider Spearman rank correlation with the observation structure specified in advance.
+
+The initial framework uses α = 0.05, with a Bonferroni-adjusted threshold of **0.025** for two pre-specified tests.
+
+A reduction of at least **5% in validation MAE** is proposed as a practical threshold for considering additional model complexity. This is a proposed decision rule, not an achieved result.
+
+Statistical test selection should be specified and justified before examining results. Small samples and dependent district-year observations may limit inference. Association does not establish causation.
+
+### 10. Applying the workflow to other scenarios
+
+| Scenario | Possible target |
+|---|---|
+| Crop yield | Yield in t/ha |
+| Commodity prices | Price in ₹/quintal |
+| Demand | Quantity per period |
+| Post-harvest loss | Loss percentage or quantity |
+| Resource planning | Water or input requirements |
+
+Each scenario requires a separately defined target, feature set, leakage controls, validation design, and evaluation criteria.
+
+**Deliverable:** Week 4 predictive modeling framework.
+
+*Scope note: The report is prepared as a framework. No model has been trained and no actual forecasting performance is claimed.*
 
 ---
 
 ## 📊 Week 5 — Model Evaluation and Reporting Strategy
 
-### Objective
-
-Develop a strategy for evaluating a hypothetical predictive model and communicating its performance.
-
-### Proposed evaluation metrics
-
-- **MAE — Mean Absolute Error:** Measures average absolute prediction error.
-- **RMSE — Root Mean Squared Error:** Gives greater weight to larger prediction errors.
-- **R² — Coefficient of Determination:** Describes the proportion of target-variable variance explained by the model in the evaluation data, subject to the metric's limitations.
+**Objective:** Establish a strategy for evaluating a predictive model and communicating results to technical and non-technical stakeholders.
 
 ### Planned reporting components
 
-- Model performance summary
-- Evaluation visualizations
-- Interpretation of model errors
-- Comparison with an appropriate baseline
 - Executive summary
-- Recommendations
-- Model limitations
-- Possible future improvements
+- Data and validation overview
+- Baseline and model comparison
+- MAE, RMSE, R², and bias
+- Evaluation visualizations and error analysis
+- Interpretation for agribusiness decisions
+- Limitations, uncertainty, and recommendations
+- Future improvements
 
-The evaluation strategy will consider whether the validation approach is suitable for the data structure and forecasting objective. For time-dependent data, temporal separation should be considered to reduce the risk of information leakage.
-
-The objective is to communicate technical results clearly to non-technical agribusiness stakeholders.
+The evaluation strategy will use a split appropriate to the forecasting objective and preserve the final test set until model selection is complete.
 
 **Status:** Upcoming. No actual model metrics or performance results are claimed.
 
 ---
 
-## 📊 Key Agribusiness Indicators
+## 📚 Potential Data Sources
 
-The project may use the following categories of indicators, depending on the task and data availability.
+| Source | Intended use |
+|---|---|
+| [AGMARKNET](https://agmarknet.gov.in/) | Market prices and arrivals |
+| [e-NAM](https://www.enam.gov.in/) | Market information and potential cross-checking |
+| [Directorate of Economics and Statistics](https://desagri.gov.in/) | Agricultural area, production, and yield statistics |
+| [India Meteorological Department](https://mausam.imd.gov.in/) | Weather and rainfall information |
+| [data.gov.in](https://www.data.gov.in/) | Government open datasets |
 
-### Market indicators
-- Minimum price
-- Modal price
-- Maximum price
-- Market arrivals
-
-### Production indicators
-- Cultivated or sown area
-- Harvested area
-- Total production
-- Crop yield
-
-### Weather indicators
-- Rainfall
-- Rainfall deviation from the long-period average
-
-### Resource indicators
-- Irrigated area
-- Rain-fed area
-- Fertilizer use per hectare, where suitable public data are available
-
-### Geographic indicators
-- State
-- District
-- Mandi/APMC
-
-Not every variable will necessarily be available or used in every stage. Data availability, definitions, units, and quality will be assessed before analytical use.
+**Data-source note:** These are potential sources. Availability, access, coverage, definitions, units, historical depth, and quality must be verified before using or combining datasets.
 
 ---
 
-## 🧠 Analytical Approach
+## 🛠️ Tools and Technologies
 
-The project follows a practical data-science workflow:
+The proposed toolkit includes:
 
-```text
-Research and Planning
-        ↓
-Data Quality Strategy
-        ↓
-Exploratory Analysis Design
-        ↓
-Statistical Analysis Framework
-        ↓
-Predictive Modeling Framework
-        ↓
-Model Evaluation
-        ↓
-Reporting and Recommendations
-```
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy"/>
+  <img src="https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white" alt="SciPy"/>
+  <img src="https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white" alt="Scikit-learn"/>
+  <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+</p>
 
-Depending on the research question and actual data, potential methods include:
+Additional potential libraries include Matplotlib and Seaborn for visualization.
 
-- Descriptive statistics
-- Trend and seasonal analysis
-- Outlier investigation
-- Correlation analysis
-- Lagged relationship analysis
-- Data visualization
-- Hypothesis testing
-- Baseline comparison
-- Predictive modeling
-- Model evaluation
-
-Methods will be selected according to the analytical question, data suitability, assumptions, and limitations. Proposed methods and illustrative examples will remain clearly distinguished from analyses performed on real data.
+These badges represent the proposed toolkit, not proof that every tool has already been used. The completed implementation should document the tools actually used.
 
 ---
 
 ## 🔁 Reproducibility and Data Integrity
 
-Reproducibility is an important part of the project.
-
 The project aims to:
 
 - Keep raw data separate from processed data.
 - Document preprocessing and analytical decisions.
-- Record assumptions and limitations.
-- Maintain a clear and organized workflow.
+- Record assumptions, sources, and limitations.
 - Use Git and GitHub for version control.
-- Document the reasoning behind methodological choices.
-- Distinguish illustrative examples from actual observations.
-- Avoid reporting unverified findings or fabricated performance metrics.
+- Record validation splits, model configurations, and metrics when modeling is implemented.
+- Clearly distinguish illustrative examples from actual observations.
+- Avoid unverified findings and fabricated performance metrics.
 
-As the internship progresses, actual datasets, notebooks, scripts, charts, and analytical outputs will be added only when they have genuinely been used and produced.
+Datasets, notebooks, scripts, charts, and analytical outputs will be added as they are genuinely obtained or produced.
 
 ---
 
@@ -501,6 +501,7 @@ agribusiness-data-analysis/
 │   └── Week_3_EDA_Report_Design.docx
 │
 ├── week-4-predictive-modeling/
+│   └── Week_4_Predictive_Modeling_Framework.docx
 │
 ├── week-5-model-evaluation/
 │
@@ -511,96 +512,43 @@ agribusiness-data-analysis/
 └── reports/
 ```
 
-This structure represents the intended organization of the repository. File names should be updated to match the exact names of files actually committed to GitHub. Empty directories may not appear in Git unless they contain tracked files.
-
-The repository will expand progressively as the internship tasks are completed. No placeholder notebooks, fabricated datasets, or artificial results are included simply to make the project appear complete.
+This is the intended organization. Ensure that filenames match the actual files committed to GitHub. Empty directories may not appear unless they contain tracked files.
 
 ---
 
-## 🛠️ Tools
+## ⚠️ Limitations
 
-Tools that may be used during the project include:
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Jupyter Notebook
-- Git
-- GitHub
-
-Tools will be used when they are relevant to the actual task rather than included only for presentation.
-
----
-
-## ⚠️ Data Limitations
-
-Public agricultural datasets may differ in:
-
-- Geographic coverage
-- Reporting frequency
-- Variable definitions
-- Units and measurement methods
-- Historical availability
-- Missing-data patterns
-- Data quality
-
-Data from different sources will not be assumed to be directly comparable without appropriate validation and preprocessing.
-
-Some resource-utilization variables may have limited or inconsistent public coverage and may be excluded if the available data are insufficient.
-
-Statistical findings, if generated later, will also need to be interpreted in light of sample size, assumptions, uncertainty, multiple comparisons, and the difference between association and causation.
+- Public agricultural datasets may have missing years, inconsistent definitions, publication delays, or uneven geographic coverage.
+- Data from different sources may not be directly comparable without validation and preprocessing.
+- Resource-utilization indicators may be excluded if reliable public data are unavailable.
+- Small datasets can make complex models unstable.
+- District-level averages can hide farm-level variation.
+- Statistical findings require careful interpretation of sample size, assumptions, uncertainty, and multiple comparisons.
+- Association does not establish causation, and predictive accuracy does not guarantee operational usefulness.
 
 ---
 
 ## 📈 Current Progress
 
-### ✅ Week 1 — Completed
+| Week | Deliverable | Progress |
+|---|---|---|
+| **Week 1** | Planning report | Completed and submitted |
+| **Week 2** | Cleaning strategy report | Completed and submitted |
+| **Week 3** | EDA design report | Completed and submitted |
+| **Week 4** | Predictive modeling framework | Completed and submitted |
+| **Week 5** | Evaluation and reporting strategy | Upcoming |
 
-**Agribusiness Data Analysis Planning**
-
-The planning report was completed and submitted. It established the initial project scope, research questions, potential data sources, analytical direction, and workflow.
-
-### ✅ Week 2 — Completed
-
-**Data Cleaning and Preprocessing Strategy**
-
-The strategy report was prepared around a hypothetical agribusiness dataset. It documented potential data-quality problems and proposed preprocessing decisions without claiming that a real dataset had been cleaned.
-
-### 🟢 Week 3 — Completed
-
-**Exploratory Data Analysis Report Design**
-
-The EDA report design has been prepared with proposed research questions, visualization plans, illustrative calculations, a formal hypothesis-testing framework, statistical assumptions, significance criteria, uncertainty reporting, limitations, reproducibility considerations, and a 10-working-day plan.
-
-The report is a design deliverable; actual EDA results from a real dataset are not claimed.
-
-### ⏳ Week 4 — Upcoming
-
-**Predictive Modeling Framework**
-
-Develop the framework for agricultural yield forecasting.
-
-### ⏳ Week 5 — Upcoming
-
-**Model Evaluation and Reporting Strategy**
-
-Develop the approach for evaluating and communicating predictive-model performance.
-
----
 
 ## 👨‍💻 Author
 
-**Priyanshu Kumar Singh**
-
+**Priyanshu Kumar Singh**  
 Junior Data Scientist Intern  
-YuvaIntern  
-Agribusiness Data Analysis
+YuvaIntern · Agribusiness Data Analysis
 
 ---
 
 ## 📌 Project Note
 
-This repository documents the project progressively throughout the internship. Completed deliverables, proposed methodologies, illustrative examples, and actual analytical results are distinguished to maintain transparency, reproducibility, and alignment with the internship requirements.
+This repository documents the internship project progressively. Completed deliverables, proposed methodologies, illustrative examples, and actual analytical results are distinguished to maintain transparency, reproducibility, and alignment with the internship requirements.
+
+⭐ *The objective is to build a genuine, reproducible data-science workflow—not simply to present a finished-looking project.*
