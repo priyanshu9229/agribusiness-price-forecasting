@@ -101,7 +101,7 @@ The workflow may be adapted to other agribusiness targets, but each target requi
 | 2 | Data Cleaning and Preprocessing Strategy | ✅ Completed |
 | 3 | Exploratory Data Analysis Report Design | ✅ Completed |
 | 4 | Predictive Modeling Framework | ✅ Completed |
-| 5 | Model Evaluation and Reporting Strategy | ⏳ Upcoming |
+| 5 | Model Evaluation and Reporting Strategy | ✅ Completed |
 
 ---
 
@@ -414,22 +414,127 @@ Each scenario requires a separately defined target, feature set, leakage control
 
 ## 📊 Week 5 — Model Evaluation and Reporting Strategy
 
-**Objective:** Establish a strategy for evaluating a predictive model and communicating results to technical and non-technical stakeholders.
+**Objective:** Define how the Week 4 wheat-yield forecasting framework would be evaluated, and how the results would be explained to both technical and non-technical stakeholders.
 
-### Planned reporting components
+### 1. Frame the evaluation
 
-- Executive summary
-- Data and validation overview
-- Baseline and model comparison
-- MAE, RMSE, R², and bias
-- Evaluation visualizations and error analysis
-- Interpretation for agribusiness decisions
-- Limitations, uncertainty, and recommendations
-- Future improvements
+Before choosing any metric, the report pins down what is being predicted, when the prediction is made, and which decision it supports.
 
-The evaluation strategy will use a split appropriate to the forecasting objective and preserve the final test set until model selection is complete.
+| Component | Proposed definition |
+|---|---|
+| Target | Wheat yield in t/ha for Uttar Pradesh districts |
+| Prediction time | 1 January, before the March–April harvest |
+| Users | Farm managers, planners, analysts, and supply-chain teams |
+| Baseline | Last year's yield for the same district |
+| Evaluation unit | One held-out district-year observation (proposed test years 2020–2022) |
 
-**Status:** Upcoming. No actual model metrics or performance results are claimed.
+### 2. Evaluation design and data controls
+
+- Keep the Week 4 time-aware split: rolling validation for 2015–2019, with 2020–2022 sealed and scored once.
+- Fit imputers, scalers, and encoders on training data only, and drop any feature that is only known after the forecast date.
+- Score the baseline and the candidate model on the same held-out observations.
+- Write the acceptance criteria down before looking at test results, so the decision cannot be bent to fit the numbers.
+- Record the data version, split dates, sample counts, model settings, random seeds, and software environment.
+
+### 3. Metrics and what each one tells you
+
+| Metric | Question it answers | Watch out for |
+|---|---|---|
+| **MAE** | How far off are predictions on average? | Under-weights large misses |
+| **RMSE** | How much do large misses matter? | Can be dominated by a few extremes |
+| **R²** | How does the error compare with always predicting the mean? | Not a percentage accuracy; can be negative |
+| **Mean error (bias)** | Do predictions lean high or low? | Over- and under-predictions can cancel out |
+
+No single metric is enough. They are read together with residual plots, errors by district and year, and the cost of a wrong forecast.
+
+### 4. Visualization plan
+
+Six plots are planned, each with a title, labelled axes with units, the evaluation period, and the number of observations:
+
+- Observed vs predicted (with a 45° reference line)
+- Residuals against predicted value
+- Distribution of errors
+- Baseline vs candidate comparison
+- MAE by district, crop, or season, with sample counts
+- Observed and predicted yield over time for selected districts
+
+### 5. Reliability and error analysis
+
+- **Systematic error:** check the sign of the mean error by subgroup and by period, because a good overall MAE can hide one weak district.
+- **Outliers:** verify the source record before correcting or excluding anything, and document the rule.
+- **Uncertainty:** if prediction intervals are used, check their coverage on held-out data (a nominal 90% interval should contain about 90% of actual values).
+- **Monitoring after deployment:** track input and prediction distributions, delayed actual outcomes, and subgroup errors, and decide in advance who reviews alerts.
+
+### 6. Reporting to stakeholders
+
+```text
+Executive Summary
+    ↓
+Data and Design
+    ↓
+Results
+    ↓
+Interpretation
+    ↓
+Recommendation
+    ↓
+Appendix
+```
+
+The report includes an executive-summary template and a plain-language version for non-technical readers. A metric is never reported on its own: "RMSE is 0.13" becomes a statement with the unit, the baseline comparison, and what it means for the decision.
+
+### 7. Illustrative examples
+
+**All numbers in this section are invented to show the calculations. They are not results from a real dataset or a trained model.**
+
+**Four-observation walk-through.** A mock dataset of four observations is used to calculate each metric by hand: MAE = 0.35 t/ha, RMSE ≈ 0.381 t/ha, mean error = 0.25 t/ha (the mock model under-predicts on average), and R² = 0.884.
+
+**Baseline vs candidate.** The same eight illustrative observations from Week 4 (four districts, **2020 and 2021 only**, with no 2022 data) are extended with subgroup checks and uncertainty. This is a two-year illustration, separate from the proposed 2020–2022 evaluation.
+
+| Metric | Baseline (last year's yield) | Candidate model |
+|---|---:|---:|
+| MAE (t/ha) | 0.225 | 0.125 |
+| RMSE (t/ha) | 0.240 | 0.132 |
+| R² | 0.57 | 0.87 |
+| Mean error | 0.000 | 0.000 |
+
+- The candidate has the lower MAE in both years and in districts B, C, and D. District A is equal (0.15 vs 0.15 t/ha), so it would be flagged for review.
+- Both mean errors are zero because over- and under-predictions cancel. Bias alone would have hidden the baseline's typical miss of 0.225 t/ha, which is why bias is reported next to MAE and RMSE, never instead of them.
+- Illustrative bootstrap interval for the improvement in absolute error: 0.04 to 0.15 t/ha.
+- Illustrative Wilcoxon signed-rank test (test M-1 from Week 4): exact p ≈ 0.055; the normal approximation gives p ≈ 0.033, which is less reliable with eight pairs and tied differences. Both are above the corrected threshold of 0.025.
+- Under the example decision rule, three of four criteria are met, but the formal test is not, so the outcome is **improve and retest**, not deploy.
+
+Eight invented pairs cannot show that a model performs reliably, and these statistics are illustrative calculations only.
+
+**Other scenarios, also illustrative.**
+
+- **Price forecasting:** weekly mandi prices give MAE ₹200 vs ₹87.5 and MAPE 8.5% vs 3.7% (baseline vs candidate). A single price spike drives most of the squared error, so RMSE sits well above MAE.
+- **Post-harvest loss classification:** precision 0.64, recall 0.80, F1 0.71. A rule that never flags any batch scores accuracy 0.80 but recall 0, so accuracy alone can make a useless model look good.
+- **Fertilizer demand with unequal costs:** two forecasts both have an MAE of 10 t, yet cost ₹80,000 and ₹40,000 once stock-outs are weighted more heavily than over-stocking. The metric has to follow the decision cost.
+
+### 8. Proposed five-day evaluation plan
+
+About 17 hours in total, once the Week 4 model and the sealed test years are ready.
+
+| Day | Focus | Output |
+|---|---|---|
+| 1 | Freeze the model, features, and split; produce baseline and candidate predictions | Predictions file with data and code version |
+| 2 | Compute MAE, RMSE, R², and mean error; bootstrap interval for the improvement | Metrics table |
+| 3 | Draw the diagnostic charts | Saved figures with captions and units |
+| 4 | Run test M-1, apply the acceptance criteria, review subgroups and the largest errors | Decision table and failure-case list |
+| 5 | Write the executive summary, recommendations, and limitations; commit to GitHub | Final evaluation report |
+
+### 9. Limitations the report calls out
+
+- Public agricultural records can be missing, delayed, or aggregated differently.
+- Results for one crop, region, or period may not carry over to others.
+- Pests, local management, and extreme weather may be missing from the features.
+- Small test samples make metrics swing, so counts are always reported.
+- Predictive associations do not show cause and effect.
+
+**Deliverable:** Week 5 model evaluation and reporting strategy report.
+
+*Scope note: The report is an evaluation strategy. No model has been trained or evaluated, the 2020–2022 test years have not been scored, and no actual forecasting performance is claimed. The worked examples are illustrative.*
 
 ---
 
@@ -504,6 +609,7 @@ agribusiness-data-analysis/
 │   └── Week_4_Predictive_Modeling_Framework.docx
 │
 ├── week-5-model-evaluation/
+│   └── Week_5_Model_Evaluation_and_Reporting_Strategy.docx
 │
 ├── data/
 │   ├── raw/
@@ -535,7 +641,7 @@ agribusiness-data-analysis/
 | **Week 2** | Cleaning strategy report | Completed and submitted |
 | **Week 3** | EDA design report | Completed and submitted |
 | **Week 4** | Predictive modeling framework | Completed and submitted |
-| **Week 5** | Evaluation and reporting strategy | Upcoming |
+| **Week 5** | Evaluation and reporting strategy | Completed and submitted |
 
 
 ## 👨‍💻 Author
